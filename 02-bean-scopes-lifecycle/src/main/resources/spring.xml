@@ -6,6 +6,10 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="triangle" class="DrawingApp.Triangle">
-        <property name="type" value="Equilateral"/>
+        <!-- <property name="type" value="Equilateral"/>  ->  Setter injection - Spring is using the setter to initialize the value of the property -->
+
+        <!-- Constructor injection -> Used for injecting objects -->
+        <constructor-arg index="0" value="Equilateral" />
+        <constructor-arg index="1" value="20" />
     </bean>
 </beans>
