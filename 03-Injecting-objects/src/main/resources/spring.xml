@@ -2,26 +2,29 @@
 
     <!--  Triangle object that is made up of the 3 points  -->
     <bean id="triangle" class="org.example.Triangle">
-        <property name="pointA" ref="zeroPoint" />
-        <property name="pointB" ref="point2" />
-        <property name="pointC" ref="point3" />
-    </bean>
 
-    <!--  First point  -->
-    <bean id="zeroPoint" class="org.example.Point">
-        <property name="x" value="0" />
-        <property name="y" value="0" />
-    </bean>
+        <!--  First point  -->
+        <property name="pointA">
+            <bean id="" class="org.example.Point">
+                <property name="x" value="0" />
+                <property name="y" value="20" />
+            </bean>
+        </property>
 
-    <!--  Second point  -->
-    <bean id="point2" class="org.example.Point">
-        <property name="x" value="-20" />
-        <property name="y" value="0" />
-    </bean>
+        <!--  Second point  -->
+        <property name="pointB">
+            <bean class="org.example.Point">
+                <property name="x" value="0" />
+                <property name="y" value="0" />
+            </bean>
+        </property>
 
-    <!--  Third point  -->
-    <bean id="point3" class="org.example.Point">
-        <property name="x" value="0" />
-        <property name="y" value="20" />
+        <!--  Third point  -->
+        <property name="pointC">
+            <bean class="org.example.Point">
+                <property name="x" value="-20" />
+                <property name="y" value="0" />
+            </bean>
+        </property>
     </bean>
 </beans>
