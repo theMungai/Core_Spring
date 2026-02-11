@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="triangle" class="org.theMungai.Triangle">
+        <property name="points">
+            <list>
+                <ref bean="pointOne" />
+                <ref bean="pointTwo" />
+                <ref bean="pointThree" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="pointOne" class="org.theMungai.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+
+    <bean id="pointTwo" class="org.theMungai.Point">
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+
+    <bean id="pointThree" class="org.theMungai.Point">
+        <property name="x" value="0" />
+        <property name="y" value="20" />
+    </bean>
+</beans>
