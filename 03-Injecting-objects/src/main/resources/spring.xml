@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  Triangle object that is made up of the 3 points  -->
+    <bean id="triangle" class="org.example.Triangle">
+        <property name="pointA" ref="zeroPoint" />
+        <property name="pointB" ref="point2" />
+        <property name="pointC" ref="point3" />
+    </bean>
+
+    <!--  First point  -->
+    <bean id="zeroPoint" class="org.example.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+    </bean>
+
+    <!--  Second point  -->
+    <bean id="point2" class="org.example.Point">
+        <property name="x" value="-20" />
+        <property name="y" value="0" />
+    </bean>
+
+    <!--  Third point  -->
+    <bean id="point3" class="org.example.Point">
+        <property name="x" value="0" />
+        <property name="y" value="20" />
+    </bean>
+</beans>
