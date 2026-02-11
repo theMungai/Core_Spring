@@ -4,18 +4,13 @@
     <bean id="triangle" class="org.example.Triangle">
 
         <!--  First point  -->
-        <property name="pointA">
-            <bean id="" class="org.example.Point">
-                <property name="x" value="0" />
-                <property name="y" value="20" />
-            </bean>
-        </property>
+        <property name="pointA" ref="zeroPoint"/>
 
         <!--  Second point  -->
         <property name="pointB">
             <bean class="org.example.Point">
                 <property name="x" value="0" />
-                <property name="y" value="0" />
+                <property name="y" value="20" />
             </bean>
         </property>
 
@@ -26,5 +21,10 @@
                 <property name="y" value="0" />
             </bean>
         </property>
+    </bean>
+
+    <bean id="zeroPoint" class="org.example.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
     </bean>
 </beans>
