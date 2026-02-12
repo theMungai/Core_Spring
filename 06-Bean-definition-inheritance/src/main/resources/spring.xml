@@ -1,13 +1,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="parentTriangle" class="org.theMungai.Triangle" abstract="true">
-        <property name="pointA" ref="pointA" />
+        <property name="points">
+            <list>
+                <ref bean="pointA" />
+            </list>
+        </property>
     </bean>
 
 
     <bean id="triangle" class="org.theMungai.Triangle" parent="parentTriangle">
-        <property name="pointB" ref="pointB" />
-        <property name="pointC" ref="pointC" />
+        <property name="points">
+            <list merge="true"> <!-- This will merge both the parent bean and this child bean -->
+                <ref bean="pointB" />
+            </list>
+        </property>
     </bean>
 
     <bean id="pointA" class="org.theMungai.Point">
