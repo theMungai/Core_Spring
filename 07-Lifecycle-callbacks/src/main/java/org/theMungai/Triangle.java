@@ -1,30 +1,46 @@
 package org.theMungai;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 
 import java.util.List;
 
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle{
 
-    public List<Point> getPoints() {
-        return points;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
+
+    public Point getPointA() {
+        return pointA;
     }
 
-    public void setPoints(List<Point> points) {
-        this.points = points;
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
     }
 
-    private List<Point> points;
+    public Point getPointB() {
+        return pointB;
+    }
 
+    public void setPointB(Point pointB) {
+        this.pointB = pointB;
+    }
+
+    public Point getPointC() {
+        return pointC;
+    }
+
+    public void setPointC(Point pointC) {
+        this.pointC = pointC;
+    }
 
 
     public void draw(){
-        for (Point point : points){
-            System.out.println("Point = (" + point.getX() + ", " + point.getY() + ")");
-        }
+        System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
+        System.out.println("Point B = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
+        System.out.println("Point C = (" + getPointC().getX() + ", " + getPointC().getY() + ")");
     }
 
+    /*
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("InitializingBean init method called for Triangle");
@@ -33,5 +49,14 @@ public class Triangle implements InitializingBean, DisposableBean {
     @Override
     public void destroy() throws Exception {
         System.out.println("DisposableBean destroy method called for Triangle");
+    }
+     */
+
+    public void myInit(){
+        System.out.println("My init method called for Triangle");
+    }
+
+    public void cleanUp (){
+        System.out.println("My cleanUp method called for Triangle");
     }
 }
